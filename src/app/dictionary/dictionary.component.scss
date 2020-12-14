@@ -1,0 +1,35 @@
+.container {
+    width: 50%;
+    margin: auto;
+    min-width: 400px;
+}
+
+.form-translate {
+    width: 100%;
+}
+
+textarea {
+    resize: none;
+}
+
+.selectionLanguage {
+    width: 100%;
+    display: flex;
+    padding: 10px 10px 10px 0px;
+}
+.selectionLanguage select {
+    width: 40%;
+    height: 30px;
+    margin-right: 5%;
+}
+.langTo {
+    margin-left: 5%;
+}
+
+.text-show {
+    border: 1px solid gray;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #d2d6d3;
+    padding: 10px;
+}

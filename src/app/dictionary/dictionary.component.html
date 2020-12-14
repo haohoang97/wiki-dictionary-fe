@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="selectionLanguage">
+    <select [(ngModel)]="languageFrom">
+      <option *ngFor="let item of languages" [(ngValue)]="item.Text">{{item.Text}}</option>
+    </select>
+    =>
+    <select class="langTo" [(ngModel)]="languageTo">
+      <option *ngFor="let item of languages" [(ngValue)]="item.Text">{{item.Text}}</option>
+    </select>
+  </div>
+  <form class="example-form">
+    <div>
+      <mat-form-field class="form-translate">
+        <input type="text" placeholder="Tra từ điển anh việt anh" aria-label="Number" matInput [formControl]="myControl"
+          [matAutocomplete]="auto" [(ngModel)]="searchValue" (keydown.enter)="submit()" />
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of listSearch | async" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+  </form>
+  <div class="text-show">
+    {{ searchResult }}
+  </div>
+</div>

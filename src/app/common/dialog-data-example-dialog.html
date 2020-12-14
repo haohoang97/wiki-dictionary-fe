@@ -1,0 +1,9 @@
+<div>
+  <div class="item-element" style="display: flex" *ngFor="let item of data;">
+    <div class="item-language" style="font-weight: bold;margin-right: 16px;">{{ item.language }}:</div>
+    <div mat-dialog-content>
+      {{ item.wordValue }}
+    </div>
+    <!-- <div style="margin: 0 8px;">|</div> -->
+  </div>
+</div>

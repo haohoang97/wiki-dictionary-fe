@@ -1,0 +1,46 @@
+.main-div {
+  display: block;
+  width: 70%;
+  margin: auto;
+  padding-top: 5%;
+}
+
+.div-text {
+  display: flex;
+  width: 100%;
+}
+
+.div-text textarea {
+  resize: none;
+  margin: 10px 10px 10px 0px;
+}
+
+.button-translate {
+  background-color: #555555;
+  width: 24%;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .main-div {
+    display: inline;
+    width: 100%;
+  }
+}
+.selectionLanguage{
+  padding-top: 50px;
+  padding-left: calc(50vw - 230px);
+  padding-bottom: 20px;
+}
+
+.img-element{
+  padding-left: calc(50vw - 230px);
+  padding-bottom: 20px;
+}

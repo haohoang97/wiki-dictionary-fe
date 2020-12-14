@@ -1,0 +1,19 @@
+<div>
+  <div class="selectionLanguage">
+    <select [(ngModel)]="languageFrom">
+      <option *ngFor="let item of languages" [(ngValue)]="item.Text">{{item.Text}}</option>
+    </select>
+    =>
+    <select class="langTo" [(ngModel)]="languageTo">
+      <option *ngFor="let item of languages" [(ngValue)]="item.Text">{{item.Text}}</option>
+    </select>
+  </div>
+  <div class="img-element">
+    <img *ngIf="urlImg" [src]="urlImg" height="200">
+    <input type="file" name="file" id="file" alife-file-to-base64 multiple (change)="onFileChanged($event)" />
+    <button type="button" (click)="onUpload()">
+        Tìm kiếm
+    </button>
+  </div>
+</div>
+

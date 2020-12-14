@@ -1,0 +1,68 @@
+<div>
+    <div class="header">
+        <div class="icon-project">
+        </div>
+        <div class="title-header">Từ điển đa ngôn ngữ</div>
+    </div>
+    <div class="content">
+        <div class="select-language">
+            <div class="language-from">
+                <select [(ngModel)]="languageFrom" (change)="comboboxChange($event)">
+                    <option *ngFor="let item of fromLanguages" [(ngValue)]="item.Text">{{item.Text}}</option>
+                </select>
+            </div>
+            <div class="switch-element">
+                <div [ngClass]="{'icon-switch': isShowSwitch, 'none-switch': !isShowSwitch}" (click)="switchEvent($event)"></div>
+            </div>
+            <div class="language-to">
+                <select class="langTo" [(ngModel)]="languageTo" (change)="comboboxChange($event)">
+                    <option *ngFor="let item of toLanguages" [(ngValue)]="item.Text">{{item.Text}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="content-result">
+            <div class="input-data">
+                <div [ngClass]="{'hide-element': !isShowInputText, 'show-element': isShowInputText}">
+                    <input class="input-text" type="text" placeholder="Nhập từ cần tìm" [(ngModel)]="searchValue" (keydown.enter)="submit()" />
+                </div>
+                <div class="img-element">
+                    <img id="img-element" *ngIf="urlImg" [src]="urlImg" height="100">
+                    <input type="file" name="file" id="file" class="custom-file-input"alife-file-to-base64 multiple (change)="onFileChanged($event)" />
+                    <button *ngIf="!isShowInputText" type="button" (click)="removeImg()">
+                        Hủy
+                    </button>
+                  </div>
+            </div>
+            <div class="content-border">
+                <div class="border-icon-translate" title="Dịch" (click)="submit()">
+                    <div class="icon-translate"></div>
+                </div>
+            </div>
+            <div class="output-data">
+                <div *ngIf="searchResult && searchResult.length > 0" class="list-data">
+                    <div class="item-element" *ngFor="let item of searchResult;">
+                        <div class="item-language">{{ item.language }}:</div>
+                        <div mat-dialog-content>
+                            {{ item.wordValue }}
+                        </div>
+                        <div>, &nbsp;&nbsp;</div>
+                    </div>
+                </div>
+                <div *ngIf="(!searchResult || searchResult.length == 0) && searchValue && searchValue.trim() != ''">
+                    Không có dữ liệu!!!
+                </div>
+            </div>
+        </div>
+        <div class="checkbox-element">
+            <input type="checkbox" [(ngModel)]="isFindSame">
+            <label for="vehicle1">Tìm kiếm gần đúng</label>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="icon-wiki"></div>
+        <div class="footer-text">
+            <div>Nguồn dữ liệu của trang web được lấy từ Wikipedia</div>
+            <a href="https://vi.wikipedia.org/">Địa chỉ Wikipedia (https://vi.wikipedia.org/)</a>
+        </div>
+    </div>
+</div>
